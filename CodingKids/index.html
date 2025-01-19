@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeKids Galaxy 🚀</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <nav>
+        <div class="logo">
+            <img src="https://assets.codepen.io/rocket.svg" alt="rocket" class="rocket">
+            <span>CodeKids Galaxy</span>
+        </div>
+        <div class="nav-links">
+            <button class="glow-button html-btn" onclick="switchLanguage('html')">
+                <i class="fas fa-code"></i> HTML Adventure
+            </button>
+            <button class="glow-button python-btn" onclick="switchLanguage('python')">
+                <i class="fas fa-snake"></i> Python Quest
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="lesson-panel floating-panel">
+                <div class="character">
+                    <img src="https://assets.codepen.io/robot.svg" alt="robot helper" class="robot">
+                </div>
+                <h2 id="lesson-title">Welcome to CodeKids Galaxy! 🌟</h2>
+                <div id="lesson-content" class="lesson-content">
+                    <div class="welcome-message">
+                        <h3>Ready for an amazing coding adventure?</h3>
+                        <p>Choose your path:</p>
+                        <div class="path-choices">
+                            <div class="path-card html-path">
+                                <h4>HTML Planet 🌍</h4>
+                                <p>Build awesome websites!</p>
+                            </div>
+                            <div class="path-card python-path">
+                                <h4>Python Planet 🐍</h4>
+                                <p>Create cool programs!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-playground floating-panel">
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>Your Code Mission 🎮</h3>
+                        <div class="editor-controls">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                    </div>
+                    <textarea id="code-editor" spellcheck="false" placeholder="Type your magical code here..."></textarea>
+                </div>
+                <div class="output-container">
+                    <div class="output-header">
+                        <h3>Mission Results 🎯</h3>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <div id="code-output"></div>
+                </div>
+                <button id="run-code" class="run-button" onclick="runCode()">
+                    <span class="button-content">
+                        <i class="fas fa-rocket"></i>
+                        Launch Code!
+                    </span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
