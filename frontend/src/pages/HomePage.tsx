@@ -49,16 +49,76 @@ export default function HomePage() {
       <Navbar onSignIn={handleGoogleAuth} onSignUp={handleGoogleAuth} />
 
       {/* Hero Section */}
-      <section className="container py-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold tracking-tight mb-6">
-            AI-Powered Personalized Learning for Kids
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Adaptive learning that grows with your child, making education fun and effective
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg">Start Learning</Button>
+      <section className="hero">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl font-bold tracking-tight mb-6">
+              AI-Powered Personalized Learning for Kids
+            </h1>
+            <p className="text-xl mb-8">
+              Adaptive learning that grows with your child, making education fun and effective
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button className="btn-primary" size="lg">Start Learning</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Courses */}
+      <section>
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center mb-12">Popular Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
+            {[
+              {
+                title: 'Math Puzzles',
+                ageGroup: 'Elementary',
+                rating: '★★★★☆',
+                icon: '🧮'
+              },
+              {
+                title: 'Intro to Coding',
+                ageGroup: 'Elementary',
+                rating: '★★★★☆',
+                icon: '💻'
+              },
+              {
+                title: 'Creative Writing',
+                ageGroup: 'Middle School',
+                rating: '★★★★★',
+                icon: '📝'
+              },
+              {
+                title: 'AI Basics',
+                ageGroup: 'High School',
+                rating: '★★★★☆',
+                icon: '🤖'
+              },
+              {
+                title: 'Digital Art',
+                ageGroup: 'All Ages',
+                rating: '★★★★★',
+                icon: '🎨'
+              },
+              {
+                title: 'Public Speaking',
+                ageGroup: 'All Ages',
+                rating: '★★★★★',
+                icon: '🎤'
+              }
+            ].map((course) => (
+              <Card key={course.title} className="min-w-[300px] course-card shadow-md">
+                <CardHeader className="text-center">
+                  <div className="text-6xl mb-4">{course.icon}</div>
+                  <CardTitle>{course.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="text-muted-foreground mb-2">{course.ageGroup}</div>
+                  <div className="text-yellow-500">{course.rating}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -66,24 +126,32 @@ export default function HomePage() {
       {/* Featured Categories */}
       <section className="bg-muted/50 py-20">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Personalized Learning Paths</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Classes for Every Age</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Coding & AI',
-                description: 'Learn programming and AI concepts through interactive projects'
+                title: 'Elementary School',
+                description: 'Foundational skills for young learners',
+                image: 'https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg'
               },
               {
-                title: 'Creative Arts',
-                description: 'Explore digital art, music, and creative expression'
+                title: 'Middle School',
+                description: 'Building core competencies',
+                image: 'https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg'
               },
               {
-                title: 'STEM Discovery',
-                description: 'Master science, technology, engineering and math concepts'
+                title: 'High School',
+                description: 'Advanced concepts for future success',
+                image: 'https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg'
               }
             ].map((category) => (
               <Card key={category.title} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
+                  <img 
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-48 object-cover mb-4 rounded-lg"
+                  />
                   <CardTitle className="text-center">{category.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center text-muted-foreground">
@@ -131,7 +199,7 @@ export default function HomePage() {
       <section className="bg-muted/50 py-20">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-12">What Parents Are Saying</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto gap-6 pb-4">
             {[
               {
                 name: 'Sarah T.',
