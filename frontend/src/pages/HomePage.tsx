@@ -7,12 +7,14 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Icons } from "@/components/icons"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useAuthNavigation } from '@/hooks/useAuthNavigation'
 
 export default function HomePage() {
   const [error, setError] = useState('')
   const [googleLoading, setGoogleLoading] = useState(false)
   const { session, forceRefresh } = useAuth()
   const navigate = useNavigate()
+  useAuthNavigation()
 
   const handleGoogleAuth = async () => {
     setGoogleLoading(true)

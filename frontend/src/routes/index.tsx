@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '@/App'
 import HomePage from '@/pages/HomePage'
+import ParentDashboard from '@/pages/ParentDashboard'
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />
+      },
+      {
+        path: 'dashboard',
+        element: <ParentDashboard />
       }
     ]
   }

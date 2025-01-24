@@ -1,0 +1,84 @@
+{
+  "layout": {
+    "type": "3-column",
+    "columns": [
+      {
+        "width": "20%",
+        "sections": ["navigation", "child_selection"]
+      },
+      {
+        "width": "60%",
+        "sections": ["progress", "activities", "metrics"]
+      },
+      {
+        "width": "20%",
+        "sections": ["notifications", "quick_actions"]
+      }
+    ]
+  },
+  "components": {
+    "navigation_bar": {
+      "height": "64px",
+      "background": "#FFFFFF",
+      "shadow": "0px 2px 4px rgba(0, 0, 0, 0.1)",
+      "elements": [
+        {
+          "type": "logo",
+          "width": "48px",
+          "alignment": "left"
+        },
+        {
+          "type": "nav_links",
+          "items": ["Dashboard", "Messages", "Settings"],
+          "font_size": "16px",
+          "spacing": "24px"
+        },
+        {
+          "type": "profile",
+          "alignment": "right",
+          "avatar_size": "32px"
+        }
+      ]
+    },
+    "progress_overview": {
+      "padding": "24px",
+      "elements": [
+        {
+          "type": "progress_bar",
+          "height": "8px",
+          "color": "#4CAF50"
+        },
+        {
+          "type": "completed_lessons",
+          "layout": "grid",
+          "columns": 3,
+          "gap": "16px"
+        },
+        {
+          "type": "upcoming_lessons",
+          "layout": "list",
+          "spacing": "16px"
+        }
+      ]
+    },
+    "notifications": {
+      "padding": "16px",
+      "height": "400px",
+      "color_codes": {
+        "urgent": "#FF5252",
+        "warning": "#FFC107",
+        "info": "#2196F3"
+      }
+    }
+  },
+  "typography": {
+    "primary": "16px",
+    "secondary": "14px",
+    "tertiary": "12px"
+  },
+  "spacing": {
+    "small": "8px",
+    "medium": "16px",
+    "large": "24px"
+  }
+}

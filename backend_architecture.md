@@ -19,14 +19,6 @@
 - Background task processing
 
 ### API Contracts:
-#### Authentication
-- POST /auth/login
-  - Request: { email: string, password: string }
-  - Response: { access_token: string, refresh_token: string }
-  
-- POST /auth/refresh
-  - Request: { refresh_token: string }
-  - Response: { access_token: string }
 
 #### User Management
 - POST /users
